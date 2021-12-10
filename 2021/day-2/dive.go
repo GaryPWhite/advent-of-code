@@ -10,28 +10,29 @@ import (
 func main() {
 	content, err := ioutil.ReadFile("path.txt")
 	if err != nil {
-		fmt.Println(fmt.Errorf("Err! %s", err))
+		fmt.Println(fmt.Errorf("err! %s", err))
 	}
 	inputLines := strings.Split(string(content), "\n")
 
-	var horizontal, depth int
+	var horizontal, depth, aim int
 
 	for _, line := range inputLines {
 		direction1value2 := strings.Split(line, " ")
 		dir := direction1value2[0]
 		value, err := strconv.Atoi(direction1value2[1])
 		if err != nil {
-			fmt.Println(fmt.Errorf("Err converting to integer: %s", err))
+			fmt.Println(fmt.Errorf("err converting to integer: %s", err))
 		}
 		switch dir {
 		case "forward":
 			horizontal += value
+			depth += aim * value
 			break
 		case "up":
-			depth -= value
+			aim -= value
 			break
 		case "down":
-			depth += value
+			aim += value
 			break
 		}
 	}
