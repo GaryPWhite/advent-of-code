@@ -28,10 +28,3 @@ pub fn rps() -> String {
 
     total.to_string()
 }
-
-// X = lose 
-// Y = draw
-// Z = win
-// A = rock = 1
-// B = paper = 2
-// C = scissors = 3
