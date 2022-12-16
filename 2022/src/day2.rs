@@ -1,7 +1,7 @@
 use std::fs;
 
 pub fn rps() -> String {
-    let raw = fs::read_to_string("./src/inputs/day2").expect("Could not read day 1");
+    let raw = fs::read_to_string("./src/inputs/day2").expect("Could not read day 2");
 
     // makes the second match must easier
     let score_array = [3,1,2];
